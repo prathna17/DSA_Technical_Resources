@@ -1,0 +1,22 @@
+public void merge(){
+  node1 temp1=start1;
+  node2 temp2=start2;
+  while(temp1!=null && temp2!=null){
+    if(temp1.val<temp2.val){
+      insert(temp1.val);
+      temp1=temp1.next;
+      }
+    else{
+      insert(temp2.val);
+      temp2=temp2.val;
+      }
+    }
+  while(temp1!=null){
+    insert(temp1.val);
+    temp1=temp1.next;
+    }
+  while(temp2!=null){
+    insert(temp2.val);
+    temp2=temp2.next;
+    }
+  }
