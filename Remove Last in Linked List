@@ -1,0 +1,21 @@
+public int removeLast(){
+  int val;
+  if(head==null){
+    System.out.println("List is Empty");
+    return -1;
+    }
+  if(head.next==null){
+    val=head.val;
+    head=null;
+    return val;
+    }
+  node temp=head;
+  node prev=null;
+  while(temp.next!=null){
+    prev=temp;
+    temp=temp.next;
+    }
+  val=temp.val;
+  prev.next=null;
+  return val;
+  }
