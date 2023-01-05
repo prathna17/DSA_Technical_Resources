@@ -1,0 +1,9 @@
+public void addFirst(int val){
+  node nnode=new node();
+  nnode.val=val;
+  nnode.next=null;
+  if(head==null){
+    head=nnode;
+    return;
+  nnode.next=head;
+  head=nnode;
