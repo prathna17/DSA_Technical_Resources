@@ -1,0 +1,9 @@
+public static int mid(){
+        node temp1=head;
+        node temp2=head;
+        while(temp2.next!=null && temp2.next.next!=null){
+            temp1=temp1.next;
+            temp2=temp2.next.next;
+        }
+        return temp1.val;
+    }
