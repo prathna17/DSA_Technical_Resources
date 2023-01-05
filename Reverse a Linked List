@@ -1,0 +1,11 @@
+public void reverse(){
+  node curr=head;
+  node next=curr.ptr;
+  node prev=null;
+  while(next!=null){
+    prev=curr;
+    curr=next;
+    next=curr.ptr;
+    curr.ptr=prev;
+    }
+  }
