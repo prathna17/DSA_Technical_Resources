@@ -5,5 +5,7 @@ public void addFirst(int val){
   if(head==null){
     head=nnode;
     return;
+    }
   nnode.next=head;
   head=nnode;
+}
