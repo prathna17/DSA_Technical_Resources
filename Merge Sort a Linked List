@@ -1,0 +1,12 @@
+public LinkedList merge_sort(Node head,Node tail){
+  if(head==tail){
+    LinkedList final=new LinkedList();
+    final.addLast(head.data);
+    return final;
+  }
+  Node mid=mid();
+  LinkedList first=merge_sort(head,mid);
+  LinkedList second=merge_sort(mid.next,tail);
+  LinkedList merged=merge(first,second);
+  return merged;
+}
