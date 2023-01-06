@@ -1,0 +1,30 @@
+public int add(node one,int p1,node two,int p2,LinkedList res){
+  if(one==null && two==null){
+  return 0;
+  }
+  int data=0;
+  if(p1>p2){
+    int ans=add(one.next,p1-1,two,p2);
+    data=one.data+ans;
+  }
+  else if(p1<p2){
+    int ans=add(one,p1,two.next,p2-1);
+    data=two.data+ans;
+  }
+  else{
+    int ans=add(one.next,p1-1,two.next,p2-1);
+    data=one.data+two.data+ans;
+  }
+  int nd=data%10;
+  int nc=data/10;
+  res.addFirst(nd);
+  return nc;
+  }
+public LinkedLIst add_result(LinkedList One,LinkedList two){
+  LinkedList res=new LinkedList();
+  int ans=add(one.head,one.size,two.head,two.size);
+  if(ans>0){
+    res.addFirst();
+  }
+  return res;
+}
