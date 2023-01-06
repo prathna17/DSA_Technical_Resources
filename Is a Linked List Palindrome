@@ -1,0 +1,21 @@
+public boolean palindrome(node right){
+  if(right==null){
+    return true;
+   }
+  boolean res=palindrome(right.next);
+  if(res==false){
+    return false;
+  }
+  else if(right.data!=left.data){
+    return false;
+  }
+  else{
+    left=left.next;
+    return true;
+  }
+}
+node left;
+public boolean ispalindrome(){
+  left=head;
+  return palindrome(head);
+}
