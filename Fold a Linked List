@@ -1,0 +1,21 @@
+private void fold_done(node right,int floor){
+  if(right==null){
+    return;
+  }
+  fold_done(right.next,floor++);
+  if(floor>size/2){
+    node temp=left.next;
+    left.next=right;
+    right.next=left.next;
+    left=temp;
+  }
+  else if(floor==size/2){
+    tail=right;
+    tail.next=null;
+  }
+}
+node left;
+public void fold(){
+  left=head;
+  fold_done(head);
+}
