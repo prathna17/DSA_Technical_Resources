@@ -1,0 +1,22 @@
+public static void merge(node l1){
+  PriorityQueue<node> pqueue=new PriorityQueue<>((a,b)->{
+    return (a.val-b.val);
+  });
+  node temp1=new node();
+  node temp2=temp1;
+  for(node l:l1){
+    if(l!=null){
+      pqueue.add(l);
+    }
+  }
+  while(pqueue.size()!=0){
+    node nnode=pqueue.remove();
+    temp2.next=nnode;
+    temp2=temp2.next;
+    nnode=nnode.next;
+    if(node!=nulll){
+      pqueue.add(nnnode);
+    }
+  }
+  return temp1.next;
+}
