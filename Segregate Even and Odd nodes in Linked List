@@ -1,0 +1,25 @@
+public static void even_odd(){
+        node dummy_even=new node();
+        node dummy_odd=new node();
+        node c=start;
+        node tail_even=dummy_even;
+        node tail_odd=dummy_odd;
+        while(c!=null){
+            if(c.val%2==0){
+                if(dummy_even.next==null) {
+                    dummy_even.next = c;
+                }
+                tail_even.next=c;
+                tail_even=c;
+            }
+            else{
+                if(dummy_odd.next==null) {
+                    dummy_odd.next = c;
+                }
+                tail_odd.next=c;
+                tail_odd=c;
+            }
+            c=c.next;
+        }
+        tail_even.next=dummy_odd.next;
+    }
