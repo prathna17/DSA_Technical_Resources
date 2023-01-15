@@ -1,0 +1,33 @@
+public static void k_reverse(int k){
+        node original_head=null;
+        node original_tail=null;
+        node temp_head=null;
+        node temp_tail=null;
+        node curr=start;
+        node prev;
+        while (length>=k) {
+                for (int i = 0; i < k; i++) {
+                    prev = curr;
+                    curr = curr.next;
+                    if (temp_head == null) {
+                        temp_head = prev;
+                        temp_tail = prev;
+                        prev.next = null;
+                    } else {
+                        prev.next = temp_head;
+                        temp_head = prev;
+                    }
+                    length--;
+                }
+                if (original_head == null) {
+                    original_head = temp_head;
+                } else {
+                    original_tail.next = temp_head;
+                }
+                original_tail = temp_tail;
+                temp_head = null;
+                temp_tail = null;
+        }
+        original_tail.next=curr;
+        start=original_head;
+    }
