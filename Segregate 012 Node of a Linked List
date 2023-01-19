@@ -1,0 +1,28 @@
+public static node segregate(){
+        node dummy0=new node();
+        node dummy1=new node();
+        node dummy2=new node();
+        node itr_0=dummy0;
+        node itr_1=dummy1;
+        node itr_2=dummy2;
+        node temp=head;
+        while(temp!=null){
+            if(temp.val==0){
+                itr_0.next=temp;
+                itr_0=itr_0.next;
+            }
+            else if(temp.val==1){
+                itr_1.next=temp;
+                itr_1=itr_1.next;
+            }
+            else{
+                itr_2.next=temp;
+                itr_2=itr_2.next;
+            }
+            temp=temp.next;
+        }
+        itr_0.next=dummy1.next;
+        itr_1.next=dummy2.next;
+        itr_2.next=null;
+        return dummy0.next;
+    }
