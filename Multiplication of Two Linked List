@@ -1,0 +1,66 @@
+public static node reverse(node head){
+  node curr=head;
+  node next=curr.next;
+  node prev;
+  while(next!=null){
+    prev=curr;
+    curr=next;
+    next=curr.next;
+    curr.next=prev;
+  }
+  return curr;
+}
+
+public static void addTwoList(node head,node ans_itr){
+  node c1=head;
+  node c2=ans_itr;
+  int carry=0;
+  while(c1!=null || carry!=0){
+    int sum=carry+(c1!=null ? c1.val : 0)+(c2.next!=null ? c2.next.val : 0);
+    int digit=sum%10;
+    carry=sum/10;
+    if(c2.next!=null){
+      c2.next.val=digit;
+    }
+    else{
+      c2.next=new node(digit);
+    }
+    if(c1!=null){
+      c1=c1.next;
+    }
+    c2=c2.next;
+  }
+}
+
+public static node multiply_digit(node head,int digit){
+  node dummy=new node(-1);
+  node ac=dummy;
+  node curr=head;
+  int carry=0;
+  while(curr!=null || carry!=0){
+    int sum=carry+(curr!=null ? curr.val*dig : 0);
+    int digit=sum%10;
+    carry=sum/10;
+    ac.next=new node(digit);
+    if(curr!=null){
+      curr=curr.next;
+    }
+    ac=ac.next;
+  }
+  return dummy.next;
+}
+
+public static node multiply_ll(node l1,node l2){
+  l1=reverse(l1);
+  l2=reverse(l2);
+  node l2_itr=l2;
+  node dummy=new node(-1);
+  node ans_itr=dummy;
+  while(l2_itr!=null){
+    node prod=multiply_digit(l1,l2_itr.val);
+    l2_itr=l2_itr.next;
+    addTwoList(prod,ans_itr);
+    ans_itr=ans_itr.next;
+  }
+  return reverse(dummy.next);
+}
