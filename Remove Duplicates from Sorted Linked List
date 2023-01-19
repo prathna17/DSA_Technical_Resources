@@ -1,0 +1,25 @@
+public ListNode deleteDuplicates(ListNode head) {
+        ListNode temp=new ListNode();
+        ListNode dummy=temp;
+        ListNode prev=null;
+        if(head==null){
+            return null;
+        }
+        while(head.next!=null){
+            prev=head;
+            head=head.next;
+            if(prev.val!=head.val){
+                dummy.next=prev;
+                dummy=dummy.next;
+            }
+        }
+        if(head.val!=dummy.val){
+            dummy.next=head;
+            dummy=dummy.next;
+            return temp.next;
+        }
+        if(head.val==dummy.val && dummy.val==0){
+            return temp;
+        }
+        return temp.next;
+    }
