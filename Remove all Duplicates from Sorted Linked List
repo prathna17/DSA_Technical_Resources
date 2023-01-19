@@ -1,0 +1,23 @@
+public static node remove_duplicates(){
+        node dummy=new node();
+        node itr=dummy;
+        itr.next=head;
+        node curr=head.next;
+        while(curr!=null){
+            boolean flag=false;
+            while (curr!=null && itr.next.val==curr.val){
+                flag=true;
+                curr=curr.next;
+            }
+            if(flag){
+                itr.next=curr;
+            }
+            else {
+                itr=itr.next;
+            }
+            if(curr!=null){
+                curr=curr.next;
+            }
+        }
+        return dummy.next;
+    }
