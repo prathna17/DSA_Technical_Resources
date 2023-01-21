@@ -1,0 +1,15 @@
+public static void removenode(node Node){
+  if(Node==head){
+    head=head.next;
+    Node.next=null;
+    head.prev=null;
+    return;
+  }
+  if(Node.next==null){
+    Node.prev.next=null;
+    Node.prev=null;
+    return;
+  }
+  Node.prev.next=Node.next;
+  Node.next.prev=Node.prev;
+}
