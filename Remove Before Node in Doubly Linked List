@@ -1,0 +1,18 @@
+public static node removebefore(Node node){
+  if(head==null){
+    System.out.println("List is Empty");
+    return head;
+  }
+  node temp;
+  if(Node.prev==head){
+    temp=Node.prev;
+    Node.prev=null;
+    head.next=null;
+    head=Node;
+    return temp;
+  }
+  temp=Node.prev;
+  Node.prev.prev.next=Node;
+  Node.prev=Node.prev.prev;
+  return temp;
+}
