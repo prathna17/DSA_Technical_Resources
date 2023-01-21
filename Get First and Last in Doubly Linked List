@@ -1,0 +1,17 @@
+public static int getFirst(){
+  if(head==null){
+    return -1;
+  }
+  return head.val;
+}
+
+public static int getLast(){
+  if(head==null){
+    return -1;
+  }
+  node temp=start;
+  while(temp.next!=null){
+    temp=temp.next;
+  }
+  return temp.val;
+}
