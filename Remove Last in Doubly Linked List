@@ -1,0 +1,19 @@
+public static int del_end(){
+        node temp=start;
+        int val;
+        if(start==null){
+            System.out.println("List is empty");
+            return -1;
+        }
+        if(start.nxt==null){
+            val= start.val;
+            start=null;
+            return val;
+        }
+        while(temp.nxt!=null){
+            temp=temp.nxt;
+        }
+        val= temp.val;
+        temp.prev.nxt=null;
+        return val;
+    }
