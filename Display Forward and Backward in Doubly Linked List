@@ -1,0 +1,19 @@
+public static void printForward(){
+  node temp=head;
+  while(temp!=null){
+    System.out.print(temp.val+" ");
+    temp=temp.next;
+  }
+}
+
+public static void printBackward(){
+  node temp=head;
+  while(temp.next!=null){
+    temp=temp.next;
+  }
+  while(temp!=head){
+    System.out.print(temp.val);
+    temp=temp.prev;
+  }
+  System.out.println(temp.val);
+}
