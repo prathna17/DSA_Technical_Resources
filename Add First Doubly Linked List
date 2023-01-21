@@ -1,0 +1,12 @@
+public static void insert_beg(int val){
+        node nnode=new node();
+        nnode.val=val;
+        nnode.nxt=start;
+        nnode.prev=null;
+        if(start==null){
+            start=nnode;
+            return;
+        }
+        start.prev=nnode;
+        start=nnode;
+    }
