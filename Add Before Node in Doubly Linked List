@@ -1,0 +1,16 @@
+public static void add_before_node(node Node, int val){
+  node nnode=new node();
+  nnode.val=val;
+  nnode.next=null;
+  nnode.prev=null;
+  if(Node==head){
+    nnode.next=head
+    head.prev=nnode;
+    head=nnode;
+    return;
+  }
+  nnode.next=Node;
+  Node.prev.next=nnode;
+  nnode.prev=Node.prev;
+  Node.prev=nnode;
+}
