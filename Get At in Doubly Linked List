@@ -1,0 +1,15 @@
+public static int getAt(int index){
+  if(head==null){
+    return -1;
+  }
+  if(index>=length){
+    return -1;
+  }
+  int itr=0;
+  node temp=head;
+  while(itr!=index){
+    temp=temp.next;
+    itr++;
+  }
+  return temp.val;
+}
