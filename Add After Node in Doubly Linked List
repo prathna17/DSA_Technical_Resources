@@ -1,0 +1,14 @@
+public static void addafter(node Node,int val){
+  node nnode=new node();
+  nnode.val=val;
+  nnode.next=null;
+  nnode.prev=null;
+  if(Node.next==null){
+    Node.next=nnode;
+    nnode.prev=Node;
+  }
+  nnode.next=head.next;
+  head.next.prev=nnode;
+  head.next=nnode;
+  nnode.prev=head;
+}
