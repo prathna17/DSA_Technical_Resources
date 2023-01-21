@@ -1,0 +1,20 @@
+public static void addAt(int val,int index){
+  node nnode=new node();
+  nnode.val=val;
+  nnode.next=null;
+  nnode.prev=null;
+  if(index>=length){
+    System.out.println("Index not found");
+    return;
+  }
+  node temp=head;
+  int itr=0;
+  while(itr!=index){
+    temp=temp.next;
+    itr++;
+  }
+  nnode.next=temp;
+  nnode.prev=temp.prev;
+  temp.prev.next=nnode;
+  temp.prev=nnode;
+}
