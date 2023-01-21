@@ -1,0 +1,26 @@
+public static int removeAt(int index){
+  if(head==null){
+    System.out.println("List is Empty");
+    return -1;
+  }
+  if(index>=length){
+    System.ou.println("Index not found");
+    return -1;
+  }
+  int val;
+  if(head.next==null){
+    val=head.val;
+    head=null;
+    return val;
+  }
+  node temp=head;
+  int itr=0;
+  while(itr!=index){
+    temp=temp.head;
+    itr++;
+  }
+  val=temp.val;
+  temp.prev.next=temp.next;
+  temp.next.prev=temp.prev;
+  return val;
+}
