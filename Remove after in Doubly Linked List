@@ -1,0 +1,21 @@
+public static node removeafter(node Node){
+  if(head==null){
+    System.out.println("Linked List is empty");
+    return head;
+  }
+  if(Node.next==null){
+    System.out.println("Node after given node not available");
+    return null;
+  }
+  node temp;
+  if(Node.next.next==null){
+    temp=Node.next;
+    Node.next=null;
+    Node.next.prev=null;
+    return temp;
+  }
+  temp=Node.next;
+  Node.next=Node.next.next;
+  Node.next.next.prev=Node;
+  return temp;
+}
